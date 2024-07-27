@@ -57,20 +57,33 @@ public class UIFunctions : MonoBehaviour
     IEnumerator ChangeColor(bool isbackward)
     {
         float elapsedTime = 0f;
-        while(elapsedTime <= duration)
+        Color startColor = currColor;
+        while(elapsedTime < duration)
         {
-            elapsedTime += Time.deltaTime / duration;
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / duration;
             if (!isbackward)
             {
-                currColor = Color.Lerp(currColor, hoverColor, elapsedTime);
+                currColor = Color.Lerp(startColor, hoverColor, t);
             }
             else
             {
-                currColor = Color.Lerp(currColor, defaultColor, elapsedTime);
+                currColor = Color.Lerp(startColor, defaultColor, t);
             }
             this.gameObject.GetComponent<TMP_Text>().color = currColor;
-            Debug.Log($"currColor: {currColor}, Elapsed Time: {elapsedTime}");
+            Debug.Log($"currColor: {currColor}, ratio: {t}");
+
             yield return null;
+        }
+
+        // Ensure the final color is set
+        if (!isbackward)
+        {
+            this.gameObject.GetComponent<TMP_Text>().color = hoverColor;
+        }
+        else
+        {
+            this.gameObject.GetComponent<TMP_Text>().color = defaultColor;
         }
     }
 }
