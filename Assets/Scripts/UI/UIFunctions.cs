@@ -1,9 +1,7 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIFunctions : MonoBehaviour
 {
@@ -19,6 +17,11 @@ public class UIFunctions : MonoBehaviour
     [Header("Size Changed")]
     public bool isSizeChanged;
     public float scaleRatio;
+
+    [Header("load Scene")]
+    public bool canLoadScene;
+    public string toLoadSceneName;
+
 
     private void Start()
     {
@@ -54,7 +57,7 @@ public class UIFunctions : MonoBehaviour
         Debug.Log($"Mouse is hover {this.gameObject.name}");
     }
 
-    IEnumerator ChangeColor(bool isbackward)
+    private IEnumerator ChangeColor(bool isbackward)
     {
         float elapsedTime = 0f;
         Color startColor = currColor;
@@ -71,8 +74,7 @@ public class UIFunctions : MonoBehaviour
                 currColor = Color.Lerp(startColor, defaultColor, t);
             }
             this.gameObject.GetComponent<TMP_Text>().color = currColor;
-            Debug.Log($"currColor: {currColor}, ratio: {t}");
-
+            //Debug.Log($"currColor: {currColor}, ratio: {t}");
             yield return null;
         }
 
@@ -84,6 +86,22 @@ public class UIFunctions : MonoBehaviour
         else
         {
             this.gameObject.GetComponent<TMP_Text>().color = defaultColor;
+        }
+    }
+
+    public void LoadSceneWithName()
+    {
+        if (canLoadScene)
+        {
+            StartCoroutine(LoadSceneAsync(toLoadSceneName));
+        }
+    }
+    private IEnumerator LoadSceneAsync(string scene)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scene);
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
         }
     }
 }
