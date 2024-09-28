@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour, ISavable
 {
+    public bool IsPlayer = false;
+
     private SaveSystem saveSystem;
 
     [Range(1f, 20f)]
@@ -25,7 +27,10 @@ public class PlayerController : MonoBehaviour, ISavable
     void Update()
     {
         // Input
-        movement.x = Input.GetAxisRaw("Horizontal");
+        if (IsPlayer)
+        {
+            movement.x = Input.GetAxisRaw("Horizontal");
+        }
 
         if (Input.GetKeyDown(KeyCode.W)) {
             SavePlayer(0);
