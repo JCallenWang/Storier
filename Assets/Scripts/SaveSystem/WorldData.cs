@@ -5,5 +5,6 @@ using UnityEngine;
 [System.Serializable]
 public class WorldData
 {
-    
+    public PlayerData playerData;
+    public EventFlagSystemData eventFlagData;
 }

@@ -32,13 +32,6 @@ public class PlayerController : MonoBehaviour, ISavable
             movement.x = Input.GetAxisRaw("Horizontal");
         }
 
-        if (Input.GetKeyDown(KeyCode.W)) {
-            SavePlayer(0);
-        }
-        else if (Input.GetKeyDown(KeyCode.Q))
-        {
-            LoadPlayer(0);
-        }
     }
 
     void FixedUpdate()
