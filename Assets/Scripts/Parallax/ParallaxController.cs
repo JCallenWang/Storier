@@ -22,7 +22,7 @@ public class ParallaxController : MonoBehaviour
         _prevCameraPosition.y = cam.transform.position.y;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (onCameraMove != null)
         {
