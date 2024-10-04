@@ -41,20 +41,14 @@ public class InkTextAnimator : MonoBehaviour
     }
 
     // Call this method when player selects a choice
-    public bool ChooseOption(int choiceIndex)
+    public void ChooseOption(int choiceIndex)
     {
         try
         {
             story.ChooseChoiceIndex(choiceIndex);
-            DisplayNextLine();
-
-            return true;
         }
-        catch(System.Exception e)
-        {
+        catch (System.Exception e) {}
 
-        }
-
-        return false;
+        DisplayNextLine();
     }
 }
