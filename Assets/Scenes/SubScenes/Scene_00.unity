@@ -1221,7 +1221,7 @@ GameObject:
   - component: {fileID: 1124197239}
   - component: {fileID: 1124197237}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: _GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1602,7 +1602,7 @@ GameObject:
   - component: {fileID: 1327647679}
   - component: {fileID: 1327647678}
   m_Layer: 0
-  m_Name: Light 2D
+  m_Name: _GlobaLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1738,7 +1738,7 @@ GameObject:
   - component: {fileID: 1639544894}
   - component: {fileID: 1639544893}
   m_Layer: 0
-  m_Name: Global Volume
+  m_Name: _Global Volume PostProcess
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2079,7 +2079,7 @@ GameObject:
   - component: {fileID: 2130673283}
   - component: {fileID: 2130673282}
   m_Layer: 0
-  m_Name: SaveSystem
+  m_Name: _SaveSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

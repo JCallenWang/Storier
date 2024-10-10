@@ -17,7 +17,8 @@ public class SaveSystem : MonoBehaviour
 
     public void Awake()
     {
-        _instance = this; 
+        _instance = this;
+        DontDestroyOnLoad(this);
     }
 
 

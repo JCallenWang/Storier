@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(EventFlagManager))]
 public class GameManager : MonoBehaviour
@@ -25,7 +26,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
     }
 
     // Update is called once per frame
