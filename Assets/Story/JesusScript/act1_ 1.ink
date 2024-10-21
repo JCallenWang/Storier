@@ -1,4 +1,4 @@
-﻿VAR hasInvestigateDesk = false
+VAR hasInvestigateDesk = false
 VAR hasInvestigateCabinet = false
 VAR hasSeenMoffy = false
 
@@ -42,6 +42,10 @@ J"一定還有什麼漏掉的" -> Office_Investigate
 	J"您好，靈異事務所? 有甚麼奇怪的事情需要我來處理呢?"
 	電話聲音"我見到了紅衣小女孩...我不想死...救救我"
 	J"也該有一些奇怪的案子了"
+	[主角放下電話，走向出口，隨手拿起一旁的偵探帽，走出了門]
+	[門關上，畫面漸漸消失]
+	[出現標題？]
+	[進入下一幕：火車]
 	-> END
 	
 ===Secret_CatGirl===
