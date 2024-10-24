@@ -8,13 +8,13 @@ J"他說他的住處，就在這條路上的底端"
 -> RedLeavesVillage_Path
 
 ===RedLeavesVillage_Path===
-+路人1
-	{hasNPC1Spoken: "村子的秘密要被發現嘍" -> RedLeavesVillage_Path| -> TalkToNpc1}
-+路人2
++ 路人1
+	{hasNPC1Spoken: "村子的秘密要被發現嘍" -> RedLeavesVillage_Path | -> TalkToNpc1}
++ 路人2
 	"應該趁機賺一波"
 	"削暴！削暴！"
 	-> RedLeavesVillage_Path
-*繼續往前走
+* 繼續往前走
 	[主角來到一棟大宅邸前面]
 	-> TalkToSunJill
 
